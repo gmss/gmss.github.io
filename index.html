@@ -1,31 +1,23 @@
-<html>
-	<head>
-		<title>Greater Manchester Skeptics Society</title>
-		<link href="gmss.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		
-		<div class="header">
-			<h1>Greater Manchester Skeptics Society</h1>
-			<nav>
-				<a href="http://www.meetup.com/gmskeptics/">Meetup</a>
-				<a href="http://www.facebook.com/gmskeptics/">Facebook</a>
-				<a href="http://www.twitter.com/gmskeptics/">Twitter</a>
-			</nav>
-		</div>
+---
+layout: default
+---
 
-		<article>
-			<h1>About the Greater Manchester Skeptics Society</h1>
-			<p>
-				The Greater Manchester Skeptics run the Manchester Skeptics in the Pub events, which are held twice each month. A bunch of Mancunian skeptics get together in the pub to discuss science&nbsp;&mdash; sometimes with a guest speaker, sometimes without but always with plenty of alcohol!
-			</p><p>
-				You don't have to be a member to come to our events, everyone and anyone is welcome. If you're in Manchester, come along!
-			</p><p>
-				<strong>Speaker</strong>: We'll have a guest speaker over on the second Thursday of each month. This is usually held at 8PM at TV21 in the Northern Quarter.
-			</p><p>
-				<strong>Social</strong>: On the fourth Thursday of each month we'll generally meet at 7PM in the The Church Inn, 84 Cambridge Street, Hulme, M15 6BP.
-			</p>
-		</article>
+<div class="home">
 
-	</body>
-</html>
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
